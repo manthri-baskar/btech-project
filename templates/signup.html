@@ -1,0 +1,13 @@
+{% extends 'signup_base.html' %}
+
+{% block title %}Signup Page{% endblock title %}
+
+{% block content %} 
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <a class="btn btn-primary" href="{% url 'home' %}" role="button">register</a>
+    </form>
+{% endblock content %}
