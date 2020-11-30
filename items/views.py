@@ -18,7 +18,7 @@ def added_item(request):
     additem_info = additem(Item_name=Item_name,Order_advertisment_cost=Order_advertisment_cost,Transportation_cost=Transportation_cost,Anti_deteriorate_cost=Anti_deteriorate_cost,Usable_time=Usable_time,Lead_time=Lead_time)
 
     additem_info.save()
-    return render(request,"add_item.html")
+    return redirect('/items/add_item')
 
 def dailybusiness(request):
     return render(request,'dailybusiness.html')

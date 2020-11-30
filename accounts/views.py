@@ -27,4 +27,4 @@ def regist(request):
     else:
         print('password not matched.....')
 
-    return redirect('/')
+    return redirect('/accounts/register')
