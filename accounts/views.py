@@ -1,20 +1,30 @@
 from django.shortcuts import render, redirect
-from .models import register
+from django.contrib.auth.models import User, auth
 
-# Sign Up View
-def SignUpView(request):
-    return render(request,"signup.html")
+# Create your views here.
 
-def signed_up(request):
+def register(request):
+    return render(request, 'register.html')
 
-    First_name      = request.POST.get("First_name",False)
-    Last_name       = request.POST.get("Last_name",False)
-    Username        = request.POST.get("Username",False)
-    Email_ID        = request.POST.get("Email_ID",False)
-    Password        = request.POST.get("Password",False)
-    Confirm_password= request.POST.get("Confirm_password",False)
+def regist(request):
+    first_name      = request.POST["first_name"]
+    last_name       = request.POST["last_name"]
+    username        = request.POST["username"]
+    email           = request.POST["email"]
+    password1       = request.POST["password1"]
+    password2       = request.POST["password2"]
 
-    register_info = register(First_name=First_name, Last_name=Last_name, Username=Username, Email_ID=Email_ID, Password=Password, Confirm_password=Confirm_password)
+    if password1==password2:
+        
+        if User.objects.filter(username=username).exists():
+            print('Username taken')
+        elif User.objects.filter(email=email).exists():
+            print('email taken')
+        else:
+            user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
+            user.save()
 
-    register_info.save()
-    return render(request,"signup.html")
+    else:
+        print('password not matched.....')
+
+    return redirect('/')
