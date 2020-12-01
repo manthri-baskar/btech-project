@@ -1,41 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %} 
-<br><br>
-<h3>Registration form</h3>
-<hr><br>
 <div class="container">
-   <div class="row">
-    <form action="regist" method="post">
-        {% csrf_token %} 
-        <div class="row">
-            <div class="col-6"><label for="element01">First name</label></div>
-            <div class="col-6"><input name="first_name" type="text" class="form-control" id="element01" required></div>
-        </div>    
-        <div class="row">
-            <div class="col-6"><label for="element02">Last name</label></div>
-            <div class="col-6"><input name="last_name" type="text" class="form-control" id="element02" required></div>
+    <h3>Registration form</h3>
+    <hr>
+    <div class="row">
+        <div class="col-4 offset-md-2">
+            <form action="regist" method="post">
+                {% csrf_token %} 
+                <div class="row">
+                    <div class="col-6"><label for="element01">First name</label></div>
+                    <div class="col-6"><input name="first_name" type="text" id="element01" required></div>
+                </div>    
+                <div class="row">
+                    <div class="col-6"><label for="element02">Last name</label></div>
+                    <div class="col-6"><input name="last_name" type="text" id="element02" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><label for="element03">Username</label></div>
+                    <div class="col-6"><input name="username" type="text" id="element03" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><label for="element04">Email ID</label></div>
+                    <div class="col-6"><input name="email" type="email" id="element04" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><label for="element05">Password</label></div>
+                    <div class="col-6"><input name="password1" type="password" id="element05" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-6"><label for="element06">Confirm password</label></div>
+                    <div class="col-6"><input name="password2" type="password" id="element06" required></div>
+                </div>
+                <div class="row">
+                    <div class="col-4"> </div>
+                    <div class="col-4"><button class="btn btn-primary" type="submit">Register</button></div>
+                </div>
+            </form>
         </div>
-        <div class="row">
-            <div class="col-6"><label for="element03">Username</label></div>
-            <div class="col-6"><input name="username" type="text" class="form-control" id="element03" required></div>
-        </div>
-        <div class="row">
-            <div class="col-6"><label for="element04">Email ID</label></div>
-            <div class="col-6"><input name="email" type="email" class="form-control" id="element04" required></div>
-        </div>
-        <div class="row">
-            <div class="col-6"><label for="element05">Password</label></div>
-            <div class="col-6"><input name="password1" type="password" class="form-control" id="element05" required></div>
-        </div>
-        <div class="row">
-            <div class="col-6"><label for="element06">Confirm password</label></div>
-            <div class="col-6"><input name="password2" type="password" class="form-control" id="element06" required></div>
-        </div>
-        <input type="submit">
-      </form>
-
-   </div>
+    </div>
 </div>
 
 {% endblock content %}

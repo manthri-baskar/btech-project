@@ -3,7 +3,6 @@
 {% block content %}
 
 <div class="container">
-    <br>
     <h3>Add item</h3>
     <p>(enter costs in rupees and time periods in months)</p>
     <hr>
@@ -13,33 +12,34 @@
           <form method="post" action="added_item/">
             {% csrf_token %} 
             <div class="row">
-                <div class="col-6"><label for="element01">Item name</label></div>
-                <div class="col-6"><input name="Item_name" type="text" class="form-control" id="element01" required></div>
+                <div class="col-8"><label for="element01">Item name</label></div>
+                <div class="col-4"><input name="Item_name" type="text" id="element01" required></div>
             </div>    
             <div class="row">
-                <div class="col-6"><label for="element02">Order advertisment cost</label></div>
-                <div class="col-6"><input name="Order_advertisment_cost" type="number" class="form-control" id="element02" required></div>
+                <div class="col-8"><label for="element02">Order advertisment cost</label></div>
+                <div class="col-4"><input name="Order_advertisment_cost" type="number" id="element02" required></div>
             </div>
             <div class="row">
-                <div class="col-6"><label for="element03">Transportation cost</label></div>
-                <div class="col-6"><input name="Transportation_cost" type="number" class="form-control" id="element03" required></div>
+                <div class="col-8"><label for="element03">Transportation cost</label></div>
+                <div class="col-4"><input name="Transportation_cost" type="number" id="element03" required></div>
             </div>
             <div class="row">
-                <div class="col-6"><label for="element04">Anti deteriorate cost</label></div>
-                <div class="col-6"><input name="Anti_deteriorate_cost" type="number" class="form-control" id="element04" required></div>
+                <div class="col-8"><label for="element04">Anti deteriorate cost</label></div>
+                <div class="col-4"><input name="Anti_deteriorate_cost" type="number" id="element04" required></div>
             </div>
             <div class="row">
-                <div class="col-6"><label for="element05">Usable time</label></div>
-                <div class="col-6"><input name="Usable_time" type="number" class="form-control" id="element05" required></div>
+                <div class="col-8"><label for="element05">Usable time</label></div>
+                <div class="col-4"><input name="Usable_time" type="number" id="element05" required></div>
             </div>
             <div class="row">
-                <div class="col-6"><label for="element06">Lead time</label></div>
-                <div class="col-6"><input name="Lead_time" type="number" class="form-control" id="element06" required></div>
+                <div class="col-8"><label for="element06">Lead time</label></div>
+                <div class="col-4"><input name="Lead_time" type="number" id="element06" required></div>
+            </div><br>
+            <div class="row">
+                <div class="col-4"> </div>
+                <div class="col-4"><button class="btn btn-primary" type="submit">additem</button></div>
             </div>
-            <button class="btn btn-primary" type="submit">additem</button>
           </form>
-
-
         </div>
      </div>
   </div>
