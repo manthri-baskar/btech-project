@@ -8,6 +8,7 @@
         <div class="col-4 offset-md-2">
             <form action="regist" method="post">
                 {% csrf_token %} 
+                <p>{{message}}</p>
                 <div class="row">
                     <div class="col-6"><label for="element01">First name</label></div>
                     <div class="col-6"><input name="first_name" type="text" id="element01" required></div>
@@ -31,7 +32,7 @@
                 <div class="row">
                     <div class="col-6"><label for="element06">Confirm password</label></div>
                     <div class="col-6"><input name="password2" type="password" id="element06" required></div>
-                </div>
+                </div><br>
                 <div class="row">
                     <div class="col-4"> </div>
                     <div class="col-4"><button class="btn btn-primary" type="submit">Register</button></div>

@@ -13,18 +13,18 @@ def regist(request):
     email           = request.POST["email"]
     password1       = request.POST["password1"]
     password2       = request.POST["password2"]
-
+ 
     if password1==password2:
         
         if User.objects.filter(username=username).exists():
-            print('Username taken')
+            return render(request,'register.html',{'message':'This username is already in use. Choose another one.'})
         elif User.objects.filter(email=email).exists():
-            print('email taken')
+            return render(request,'register.html',{'message':'This email is already in use. Choose another one.'})
         else:
             user = User.objects.create_user(first_name=first_name, last_name=last_name, username=username, email=email, password=password1)
             user.save()
 
     else:
-        print('password not matched.....')
+        return render(request,'register.html',{'message':'password is not confirmed.....'})
 
-    return redirect('/accounts/register')
+    return render(request,'register.html',{'message':'account created'})
